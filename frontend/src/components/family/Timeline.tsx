@@ -1,33 +1,33 @@
 const MILESTONES = [
   {
-    year: "1952",
-    title: "The First Grove",
+    year: "Generations",
+    title: "The Mazzone Grove",
     description:
-      "Nonno Giuseppe plants his first olive grove on the hillsides of western Sicily, beginning what would become a family legacy.",
+      "The Mazzone family has tended olive groves in Ruvo di Puglia, Italy for generations. Giacomo and his son Giuseppe continue the family tradition of producing some of the region's finest extra virgin olive oil.",
   },
   {
-    year: "1970s",
-    title: "The Craft Deepens",
+    year: "1994",
+    title: "A New Home",
     description:
-      "The second generation inherits the grove and the knowledge. Traditional cold-press methods are refined, and the family begins supplying local markets.",
+      "Cinzia Testini Forbes, born in Ruvo di Puglia, marries Mike in Italy. They move to the United States together, bringing a deep love for Italian food, culture, and family tradition.",
   },
   {
-    year: "1990s",
-    title: "Beyond Sicily",
+    year: "1998",
+    title: "The Farmers Market",
     description:
-      "The Mazzone name reaches beyond the island. Word spreads through Italian-American communities, and the first exports begin.",
+      "Cinzia and Mike begin selling their family's extra virgin olive oil at the Sarasota Farmers Market — just one year after relocating to the area. The community responds with enthusiasm.",
   },
   {
     year: "2010",
-    title: "A New Chapter",
+    title: "The Store Opens",
     description:
-      "The third generation brings Mazzone online, introducing the family's oils, vinegars, and pantry staples to a national audience.",
+      "Community demand for authentic Italian products unavailable in stores leads the Mazzone family to open a retail location at 6300 South Tamiami Trail in Sarasota, Florida.",
   },
   {
     year: "Today",
     title: "La Famiglia Grows",
     description:
-      "Events, classes, farmer's markets, and Il Club Mazzone — the family table has never been bigger. But the oil is still pressed the same way Giuseppe taught.",
+      "Events, cooking classes, Italian language lessons, tours of Italy, and a full online shop — the Mazzone family table has never been bigger. But the oil is still stone-milled and first cold-pressed, the same way it's always been.",
   },
 ];
 
@@ -37,10 +37,10 @@ export function Timeline() {
       <div className="container-narrow">
         <div className="text-center mb-16">
           <p className="text-gold-500 uppercase tracking-[0.2em] text-sm mb-3">
-            La Nostra Tradizione
+            La Nostra Storia
           </p>
           <h2 className="font-serif text-heading-lg text-olive-900">
-            A Family Timeline
+            Our Story
           </h2>
         </div>
 

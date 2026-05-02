@@ -11,6 +11,7 @@ const footerLinks = {
   ],
   company: [
     { name: "Our Family", href: "/our-family" },
+    { name: "Italian Tours", href: "/tours" },
     { name: "Events & Classes", href: "/events" },
     { name: "Journal", href: "/journal" },
     { name: "Il Club", href: "/club" },

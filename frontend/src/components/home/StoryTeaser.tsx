@@ -9,8 +9,8 @@ export function StoryTeaser() {
         <div className="relative">
           <div className="aspect-[4/5] bg-olive-100 rounded-sm overflow-hidden">
             <img
-              src="/images/story/olive-tree.jpeg"
-              alt="Mazzone family olive grove in Sicily"
+              src="/images/story/pugliese-trees.jpg"
+              alt="Pugliese olive trees in the Mazzone grove"
               className="w-full h-full object-cover"
             />
           </div>
@@ -28,15 +28,15 @@ export function StoryTeaser() {
           </h2>
           <div className="space-y-4 text-stone leading-relaxed">
             <p>
-              In 1952, Nonno Giuseppe planted his first olive grove on the
-              sun-drenched hillsides of western Sicily. What began as a family
-              tradition has become a lifelong dedication to producing the finest
-              extra virgin olive oil.
+              Cinzia Testini Forbes was born in Ruvo di Puglia, Italy. In
+              1998, she and her husband Mike brought their family&apos;s extra
+              virgin olive oil to the Sarasota Farmers Market — and a community
+              fell in love.
             </p>
             <p>
-              Today, the Mazzone family continues to harvest by hand, press
-              within hours, and bottle with the same care that Giuseppe taught
-              his children — and they taught theirs.
+              Today, the Mazzone family continues to stone-mill and cold-press
+              their oil in Puglia, while sharing Italian culture through their
+              store, events, classes, and tours of Italy.
             </p>
             <p className="font-serif text-olive-700 italic text-lg">
               &ldquo;L&apos;olio buono si fa con le mani e con il cuore.&rdquo;

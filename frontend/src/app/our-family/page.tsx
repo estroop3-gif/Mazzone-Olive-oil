@@ -7,15 +7,15 @@ export default function OurFamilyPage() {
     <div>
       <FamilyHero />
 
-      {/* The Family */}
+      {/* The Family — From Puglia, With Love */}
       <section className="section-padding bg-cream">
         <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <div className="aspect-[4/5] bg-olive-100 rounded-sm overflow-hidden">
+            <div className="bg-olive-100 rounded-sm overflow-hidden">
               <img
-                src="/images/story/olive-tree.jpeg"
-                alt="The Mazzone family in their grove"
-                className="w-full h-full object-cover"
+                src="/images/story/mcmazzone.jpg"
+                alt="Mike and Cinzia Mazzone"
+                className="w-full h-auto"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 border-2 border-gold-300 rounded-sm -z-10" />
@@ -23,104 +23,180 @@ export default function OurFamilyPage() {
 
           <div className="lg:pl-8">
             <p className="text-gold-500 uppercase tracking-[0.2em] text-sm mb-4">
-              La Famiglia
+              Dalla Puglia, Con Amore
             </p>
             <h2 className="font-serif text-heading-lg text-olive-900 mb-6">
-              Three Generations at the Table
+              From Puglia, With Love
             </h2>
             <div className="space-y-4 text-stone leading-relaxed">
               <p>
-                In 1952, Nonno Giuseppe planted his first olive grove on the
-                sun-drenched hillsides of western Sicily. What began as a family
-                tradition has become a lifelong dedication to producing the finest
-                extra virgin olive oil.
+                Cinzia Testini Forbes was born in Ruvo di Puglia, Italy. She met
+                her husband, Mike, while in Italy. They married and later moved
+                to the U.S. in 1994. They have two children, Carroll and Alessandro.
               </p>
               <p>
-                Today, the Mazzone family continues to harvest by hand, press
-                within hours, and bottle with the same care that Giuseppe taught
-                his children — and they taught theirs.
+                In 2010, Cinzia introduced Sarasota, Florida, to her family&apos;s
+                extra virgin olive oil. What began at the Sarasota Farmers Market
+                in 1998 — one year after relocating — grew into a beloved local
+                institution, driven by community demand for authentic Italian
+                products unavailable in stores.
               </p>
               <p className="font-serif text-olive-700 italic text-lg">
-                &ldquo;L&apos;olio buono si fa con le mani e con il cuore.&rdquo;
-              </p>
-              <p className="text-sm text-stone">
-                — Good oil is made with hands and heart.
+                &ldquo;We are a company that is first and foremost a family. Our
+                company values are established upon our Christian faith and the
+                love of people.&rdquo;
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Mission */}
+      {/* Giuseppe & Giacomo — Puglia */}
       <section className="section-padding bg-warm-white">
-        <div className="container-narrow text-center">
-          <p className="text-gold-500 uppercase tracking-[0.2em] text-sm mb-4">
-            La Missione
-          </p>
-          <h2 className="font-serif text-heading-lg text-olive-900 mb-8">
-            Why We Do It
-          </h2>
-          <div className="space-y-6 text-stone leading-relaxed max-w-2xl mx-auto">
-            <p>
-              We believe the world deserves real olive oil — not the
-              mass-produced, diluted product that fills most supermarket
-              shelves. Every bottle of Mazzone oil is traceable to a single
-              grove, pressed within hours of harvest, and bottled without
-              blending or additives.
+        <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="lg:order-2">
+            <div className="bg-olive-100 rounded-sm overflow-hidden">
+              <img
+                src="/images/story/ggmazzone.jpg"
+                alt="Giuseppe and Giacomo Mazzone in Puglia"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+
+          <div className="lg:order-1 lg:pr-8">
+            <p className="text-gold-500 uppercase tracking-[0.2em] text-sm mb-4">
+              Ruvo di Puglia, Italia
             </p>
-            <p>
-              Our mission is simple: bring the honest flavors of Sicily to your
-              table, and keep the traditions alive for the next generation.
-            </p>
+            <h2 className="font-serif text-heading-lg text-olive-900 mb-6">
+              Giuseppe & Giacomo
+            </h2>
+            <div className="space-y-4 text-stone leading-relaxed">
+              <p>
+                Giuseppe is the owner of Mazzone Extravergine in Ruvo di Puglia.
+                He and Giacomo, his father, continue the family practice of caring
+                for the Mazzone olive groves and producing some of the region&apos;s
+                finest extra virgin olive oil.
+              </p>
+              <p>
+                Their oil is stone-milled and first cold-pressed — the traditional
+                method that preserves the full character and nutrition of the fruit.
+                No chemicals, no heat, no shortcuts.
+              </p>
+              <p>
+                Every bottle of Mazzone olive oil traces directly back to these
+                groves and these hands.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* The Grove */}
+      {/* Our Olive Oil */}
       <section className="section-padding bg-olive-900 text-white">
         <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1">
+          <div>
             <p className="text-gold-400 uppercase tracking-[0.2em] text-sm mb-4">
-              L&apos;Uliveto
+              Il Nostro Olio
             </p>
             <h2 className="font-serif text-heading-lg mb-6">
-              The Grove
+              Our Olive Oil
             </h2>
             <div className="space-y-4 text-olive-200 leading-relaxed">
               <p>
-                Our groves sit on the western coast of Sicily, between Castelvetrano
-                and the ancient ruins of Selinunte. The terroir — mineral-rich
-                clay soil, Mediterranean breezes, and 300 days of sun — produces
-                olives with unmatched complexity.
+                Mazzone extra virgin olive oil is stone-milled and first
+                cold-pressed in Puglia, Italy. The Pugliese olive groves
+                produce olives with exceptional character — rich, peppery,
+                and full of the polyphenols that make real EVOO both
+                delicious and healthful.
               </p>
               <p>
-                We cultivate primarily Nocellara del Belice, the prized varietal
-                native to this corner of the island. Hand-harvested in October
-                and November, cold-pressed within four hours.
+                Beyond our signature extra virgin, we offer a full range of
+                infused and fused olive oils — basil, lemon, orange, oregano,
+                rosemary, garlic, pepper, and white truffle — as well as
+                balsamic vinegars, reductions, spices, sauces, and pantry
+                staples imported from Italy.
               </p>
               <p>
-                No chemicals, no irrigation, no shortcuts. The grove has been
-                organic since before the word existed.
+                Everything we sell, we stand behind. If it&apos;s in our shop,
+                it&apos;s because our family uses it at our own table.
               </p>
             </div>
           </div>
 
-          <div className="order-1 lg:order-2">
-            <div className="aspect-[4/5] bg-olive-800 rounded-sm overflow-hidden">
+          <div>
+            <div className="bg-olive-800 rounded-sm overflow-hidden">
               <img
-                src="/images/story/olive-tree.jpeg"
-                alt="Mazzone olive grove in Sicily"
-                className="w-full h-full object-cover opacity-80"
+                src="/images/story/stone-milling.jpg"
+                alt="Traditional stone milling of Mazzone olive oil"
+                className="w-full h-auto opacity-90"
               />
             </div>
           </div>
         </div>
       </section>
 
+      {/* The Grove */}
+      <section className="section-padding bg-cream">
+        <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="bg-olive-100 rounded-sm overflow-hidden">
+              <img
+                src="/images/story/pugliese-trees.jpg"
+                alt="Pugliese olive trees in the Mazzone grove"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+
+          <div className="lg:pl-8">
+            <p className="text-gold-500 uppercase tracking-[0.2em] text-sm mb-4">
+              L&apos;Uliveto
+            </p>
+            <h2 className="font-serif text-heading-lg text-olive-900 mb-6">
+              The Grove
+            </h2>
+            <div className="space-y-4 text-stone leading-relaxed">
+              <p>
+                The Mazzone olive groves sit in Puglia, the heel of Italy&apos;s
+                boot, near the Adriatic coast. This region is home to some of the
+                oldest and most productive olive trees in the world — some over
+                a thousand years old.
+              </p>
+              <p>
+                Giuseppe and Giacomo tend the groves through every season —
+                pruning, harvesting by hand, and pressing within hours to
+                capture the freshest flavor possible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Harvest photo band */}
+      <section className="bg-warm-white">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
+          {[
+            { src: "/images/story/olives-harvest.jpg", alt: "Olives during harvest" },
+            { src: "/images/story/olives-hands.jpg", alt: "Olives in hands" },
+            { src: "/images/story/grove-tree.jpg", alt: "Olive tree in the grove" },
+            { src: "/images/story/bottle-lineup.jpg", alt: "Mazzone olive oil bottles" },
+          ].map((img) => (
+            <div key={img.src} className="aspect-[4/3] overflow-hidden">
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       <Timeline />
       <FarmersMarkets />
 
-      {/* The Tradition */}
+      {/* The Process */}
       <section className="section-padding bg-warm-white">
         <div className="container-narrow text-center">
           <p className="text-gold-500 uppercase tracking-[0.2em] text-sm mb-4">
@@ -138,8 +214,8 @@ export default function OurFamilyPage() {
                 La Raccolta
               </h3>
               <p className="text-sm text-stone leading-relaxed">
-                Hand-harvested at peak ripeness in October and November. Every
-                olive is picked by hand to avoid bruising.
+                Hand-harvested at peak ripeness. Every olive is picked
+                carefully to avoid bruising and preserve quality.
               </p>
             </div>
             <div>
@@ -150,8 +226,8 @@ export default function OurFamilyPage() {
                 La Spremitura
               </h3>
               <p className="text-sm text-stone leading-relaxed">
-                Cold-pressed within four hours of harvest. Low temperatures
-                preserve the delicate flavors and antioxidants.
+                Stone-milled and first cold-pressed. The traditional method
+                preserves the full character and nutrition of the fruit.
               </p>
             </div>
             <div>
@@ -162,8 +238,8 @@ export default function OurFamilyPage() {
                 L&apos;Imbottigliamento
               </h3>
               <p className="text-sm text-stone leading-relaxed">
-                Bottled unfiltered or lightly filtered. Dark glass protects the
-                oil from light. Sealed with nothing but olive oil inside.
+                Bottled and shipped directly to our Sarasota store and
+                to your door. Nothing added, nothing removed.
               </p>
             </div>
           </div>

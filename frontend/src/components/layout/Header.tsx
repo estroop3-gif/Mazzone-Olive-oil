@@ -7,6 +7,7 @@ import { ShoppingBag, Menu, X } from "lucide-react";
 const navigation = [
   { name: "Shop", href: "/shop" },
   { name: "Our Family", href: "/our-family" },
+  { name: "Tours", href: "/tours" },
   { name: "Events", href: "/events" },
   { name: "Journal", href: "/journal" },
   { name: "Il Club", href: "/club" },
