@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { Calendar, Users, Clock, MapPin, Star, Check, Plane, Sun, UtensilsCrossed, Wine, Camera } from "lucide-react";
+import { Calendar, Users, Clock, MapPin, Star, Check, Plane, Sun, UtensilsCrossed, Wine, Camera, X, Bell } from "lucide-react";
 
 const TOURS = [
   {
@@ -120,9 +121,60 @@ const TESTIMONIALS = [
   },
 ];
 
+function WaitlistModal({ tour, onClose }: { tour: string; onClose: () => void }) {
+  const [submitted, setSubmitted] = useState(false);
+
+  if (submitted) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+        <div className="relative bg-white rounded-sm shadow-xl w-full max-w-md p-8 text-center">
+          <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+            <Check size={20} className="text-green-600" />
+          </div>
+          <h3 className="font-serif text-lg text-olive-900 mb-2">You&apos;re on the list!</h3>
+          <p className="text-sm text-stone mb-4">We&apos;ll notify you as soon as {tour} opens for booking.</p>
+          <button onClick={onClose} className="text-sm text-olive-600 hover:text-olive-800 underline">Close</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+      <div className="relative bg-white rounded-sm shadow-xl w-full max-w-md">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-olive-100">
+          <h2 className="font-serif text-lg text-olive-900">Join Waitlist</h2>
+          <button onClick={onClose} className="text-stone hover:text-olive-900"><X size={18} /></button>
+        </div>
+        <div className="p-6">
+          <p className="text-sm text-stone mb-4">Get notified when <strong>{tour}</strong> opens for booking.</p>
+          <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-olive-800 mb-1">Name</label>
+              <input type="text" required className="w-full px-3 py-2 border border-olive-200 rounded-sm text-sm" placeholder="Your name" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-olive-800 mb-1">Email</label>
+              <input type="email" required className="w-full px-3 py-2 border border-olive-200 rounded-sm text-sm" placeholder="your@email.com" />
+            </div>
+            <Button type="submit" variant="primary" className="w-full">
+              Join Waitlist
+            </Button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ToursPage() {
+  const [waitlistTour, setWaitlistTour] = useState<string | null>(null);
+
   return (
     <div>
+      {waitlistTour && <WaitlistModal tour={waitlistTour} onClose={() => setWaitlistTour(null)} />}
       {/* Hero — full bleed with their actual coast photo */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -276,9 +328,19 @@ export default function ToursPage() {
                         <span className="text-sm text-stone ml-1">/ person</span>
                       </div>
                     )}
-                    <Button className="bg-gold-500 text-olive-950 hover:bg-gold-400">
-                      Book Now
-                    </Button>
+                    {tour.tag === "Coming Soon" ? (
+                      <button
+                        onClick={() => setWaitlistTour(tour.title)}
+                        className="inline-flex items-center gap-2 bg-olive-100 text-olive-800 px-5 py-2.5 rounded-sm text-sm font-medium hover:bg-olive-200 transition-colors"
+                      >
+                        <Bell size={14} />
+                        Join Waitlist
+                      </button>
+                    ) : (
+                      <Button className="bg-gold-500 text-olive-950 hover:bg-gold-400">
+                        Book Now
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>

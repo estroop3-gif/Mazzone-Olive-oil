@@ -1,6 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { Check, TreePine, Gift, Star } from "lucide-react";
+import { Check, TreePine, Gift, Star, X } from "lucide-react";
 
 const PLANS = [
   {
@@ -47,8 +50,62 @@ const PLANS = [
 ];
 
 export default function ClubPage() {
+  const [giftOpen, setGiftOpen] = useState(false);
+  const [giftSubmitted, setGiftSubmitted] = useState(false);
+
   return (
     <div className="pt-20">
+      {/* Gift Modal */}
+      {giftOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/50" onClick={() => setGiftOpen(false)} />
+          <div className="relative bg-white rounded-sm shadow-xl w-full max-w-md">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-olive-100">
+              <h2 className="font-serif text-lg text-olive-900">Gift Il Club</h2>
+              <button onClick={() => setGiftOpen(false)} className="text-stone hover:text-olive-900"><X size={18} /></button>
+            </div>
+            <div className="p-6">
+              {giftSubmitted ? (
+                <div className="text-center py-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Check size={20} className="text-green-600" />
+                  </div>
+                  <p className="font-serif text-lg text-olive-900 mb-2">Gift Sent!</p>
+                  <p className="text-sm text-stone">Your recipient will receive a beautiful email with their gift code.</p>
+                </div>
+              ) : (
+                <form onSubmit={(e) => { e.preventDefault(); setGiftSubmitted(true); }} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-olive-800 mb-1">Your Name</label>
+                    <input type="text" required className="w-full px-3 py-2 border border-olive-200 rounded-sm text-sm" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-olive-800 mb-1">Recipient Name</label>
+                    <input type="text" required className="w-full px-3 py-2 border border-olive-200 rounded-sm text-sm" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-olive-800 mb-1">Recipient Email</label>
+                    <input type="email" required className="w-full px-3 py-2 border border-olive-200 rounded-sm text-sm" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-olive-800 mb-1">Plan</label>
+                    <select required className="w-full px-3 py-2 border border-olive-200 rounded-sm text-sm">
+                      <option value="">Select plan...</option>
+                      <option value="singolo">Singolo — $35/mo</option>
+                      <option value="duo">Duo — $62/mo</option>
+                      <option value="collezione">Collezione — $89/quarter</option>
+                    </select>
+                  </div>
+                  <Button type="submit" variant="primary" className="w-full">
+                    Send Gift
+                  </Button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 olive-gradient" />
@@ -59,11 +116,18 @@ export default function ClubPage() {
           <h1 className="font-serif text-display text-white mb-6 text-balance">
             La dolce vita, delivered monthly
           </h1>
-          <p className="text-xl text-olive-200 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-olive-200 max-w-2xl mx-auto leading-relaxed mb-8">
             Join our olive oil club and receive hand-selected bottles from each
             harvest. Includes tasting notes, pairing suggestions, and recipes
             from Nonna&apos;s kitchen.
           </p>
+          <button
+            onClick={() => { setGiftOpen(true); setGiftSubmitted(false); }}
+            className="inline-flex items-center gap-2 bg-gold-500 text-olive-950 px-6 py-3 rounded-sm font-medium hover:bg-gold-400 transition-colors"
+          >
+            <Gift size={18} />
+            Gift Il Club
+          </button>
         </div>
       </section>
 

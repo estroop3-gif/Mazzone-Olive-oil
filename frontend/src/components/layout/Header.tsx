@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ShoppingBag, Menu, X } from "lucide-react";
+import { ShoppingBag, Menu, X, LogIn, LayoutDashboard } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
+import { useCart } from "@/context/CartContext";
 
 const navigation = [
   { name: "Shop", href: "/shop" },
@@ -15,6 +17,8 @@ const navigation = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { user, isAdmin, loading } = useAuth();
+  const { itemCount } = useCart();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-olive-100">
@@ -42,11 +46,44 @@ export function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
+          {!loading && (
+            user ? (
+              isAdmin ? (
+                <Link
+                  href="/admin"
+                  className="flex items-center gap-1.5 text-sm text-olive-700 hover:text-olive-900 transition-colors"
+                >
+                  <LayoutDashboard size={16} />
+                  <span className="hidden sm:inline">Admin</span>
+                </Link>
+              ) : (
+                <Link
+                  href="/account"
+                  className="text-sm text-olive-700 hover:text-olive-900 transition-colors"
+                >
+                  Account
+                </Link>
+              )
+            ) : (
+              <Link
+                href="/login"
+                className="flex items-center gap-1.5 text-sm text-olive-700 hover:text-olive-900 transition-colors"
+              >
+                <LogIn size={16} />
+                <span className="hidden sm:inline">Log In</span>
+              </Link>
+            )
+          )}
           <Link
             href="/cart"
             className="relative p-2 text-olive-700 hover:text-olive-900 transition-colors"
           >
             <ShoppingBag size={20} />
+            {itemCount > 0 && (
+              <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] flex items-center justify-center rounded-full bg-red-600 text-white text-[10px] font-bold leading-none px-1">
+                {itemCount > 99 ? "99+" : itemCount}
+              </span>
+            )}
           </Link>
 
           {/* Mobile toggle */}
@@ -74,6 +111,25 @@ export function Header() {
                 </Link>
               </li>
             ))}
+            <li className="pt-2 border-t border-olive-100">
+              {user ? (
+                <Link
+                  href={isAdmin ? "/admin" : "/account"}
+                  onClick={() => setMobileOpen(false)}
+                  className="block text-lg font-serif text-olive-800"
+                >
+                  {isAdmin ? "Admin Dashboard" : "Account"}
+                </Link>
+              ) : (
+                <Link
+                  href="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="block text-lg font-serif text-olive-800"
+                >
+                  Log In
+                </Link>
+              )}
+            </li>
           </ul>
         </div>
       )}
