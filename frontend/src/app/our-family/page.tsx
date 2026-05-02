@@ -57,8 +57,8 @@ export default function OurFamilyPage() {
           <div className="lg:order-2">
             <div className="rounded-sm overflow-hidden bg-olive-50">
               <img
-                src="/images/story/first-oil.jpg"
-                alt="The first Mazzone olive oil"
+                src="/images/story/ggmazzone.jpg"
+                alt="Giuseppe and Giacomo Mazzone in Puglia"
                 className="w-full h-auto rounded-sm"
               />
             </div>
