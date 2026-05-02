@@ -11,11 +11,11 @@ export default function OurFamilyPage() {
       <section className="section-padding bg-cream">
         <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <div className="bg-olive-100 rounded-sm overflow-hidden">
+            <div className="rounded-sm overflow-hidden bg-olive-50">
               <img
-                src="/images/story/mcmazzone.jpg"
-                alt="Mike and Cinzia Mazzone"
-                className="w-full h-auto"
+                src="/images/story/cinzia-boat.jpg"
+                alt="Cinzia Mazzone"
+                className="w-full h-auto rounded-sm"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 border-2 border-gold-300 rounded-sm -z-10" />
@@ -55,11 +55,11 @@ export default function OurFamilyPage() {
       <section className="section-padding bg-warm-white">
         <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="lg:order-2">
-            <div className="bg-olive-100 rounded-sm overflow-hidden">
+            <div className="rounded-sm overflow-hidden bg-olive-50">
               <img
-                src="/images/story/ggmazzone.jpg"
-                alt="Giuseppe and Giacomo Mazzone in Puglia"
-                className="w-full h-auto"
+                src="/images/story/first-oil.jpg"
+                alt="The first Mazzone olive oil"
+                className="w-full h-auto rounded-sm"
               />
             </div>
           </div>
@@ -125,11 +125,11 @@ export default function OurFamilyPage() {
           </div>
 
           <div>
-            <div className="bg-olive-800 rounded-sm overflow-hidden">
+            <div className="rounded-sm overflow-hidden">
               <img
                 src="/images/story/stone-milling.jpg"
                 alt="Traditional stone milling of Mazzone olive oil"
-                className="w-full h-auto opacity-90"
+                className="w-full h-auto rounded-sm opacity-90"
               />
             </div>
           </div>
@@ -140,11 +140,11 @@ export default function OurFamilyPage() {
       <section className="section-padding bg-cream">
         <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="bg-olive-100 rounded-sm overflow-hidden">
+            <div className="rounded-sm overflow-hidden bg-olive-50">
               <img
                 src="/images/story/pugliese-trees.jpg"
                 alt="Pugliese olive trees in the Mazzone grove"
-                className="w-full h-auto"
+                className="w-full h-auto rounded-sm"
               />
             </div>
           </div>
@@ -173,20 +173,20 @@ export default function OurFamilyPage() {
         </div>
       </section>
 
-      {/* Harvest photo band */}
-      <section className="bg-warm-white">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
+      {/* Photo band */}
+      <section className="bg-warm-white py-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 px-2">
           {[
-            { src: "/images/story/olives-harvest.jpg", alt: "Olives during harvest" },
             { src: "/images/story/olives-hands.jpg", alt: "Olives in hands" },
+            { src: "/images/story/carmine-show.jpg", alt: "Carmine at a show" },
             { src: "/images/story/grove-tree.jpg", alt: "Olive tree in the grove" },
             { src: "/images/story/bottle-lineup.jpg", alt: "Mazzone olive oil bottles" },
           ].map((img) => (
-            <div key={img.src} className="aspect-[4/3] overflow-hidden">
+            <div key={img.src} className="rounded-sm overflow-hidden bg-olive-50">
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-64 md:h-72 object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
           ))}

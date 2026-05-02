@@ -3,11 +3,11 @@ export function FamilyHero() {
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/images/story/mcmazzone.jpg"
+          src="/images/story/family.jpeg"
           alt="The Mazzone family"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-olive-950/70 via-olive-950/50 to-olive-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-olive-950/60 via-olive-950/40 to-olive-950/70" />
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
