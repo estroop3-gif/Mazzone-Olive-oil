@@ -13,8 +13,8 @@ export default function OurFamilyPage() {
           <div className="relative">
             <div className="rounded-sm overflow-hidden bg-olive-50">
               <img
-                src="/images/story/cinzia-boat.jpg"
-                alt="Cinzia Mazzone"
+                src="/images/story/mcmazzone.jpg"
+                alt="Mike and Cinzia Mazzone"
                 className="w-full h-auto rounded-sm"
               />
             </div>
