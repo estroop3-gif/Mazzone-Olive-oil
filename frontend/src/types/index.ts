@@ -119,3 +119,64 @@ export interface Address {
   is_default: boolean;
   created_at: string;
 }
+
+export interface TrackingEvent {
+  status: string;
+  description: string;
+  date: string;
+  location?: string;
+}
+
+export interface Episode {
+  id: string;
+  title: string;
+  description: string;
+  season: number;
+  episode_number: number;
+  duration_minutes: number;
+  status: "draft" | "published" | "scheduled";
+  is_featured: boolean;
+  published_at?: string | null;
+  thumbnail_url?: string | null;
+  video_url?: string | null;
+  category?: string;
+}
+
+export interface MediaSubscription {
+  id: string;
+  customer_id: string;
+  status: "active" | "cancelled" | "past_due";
+  plan: "monthly" | "annual";
+  price_cents: number;
+  current_period_start: string;
+  current_period_end: string;
+}
+
+export interface CommunityThread {
+  id: string;
+  category: "recipes" | "tasting_notes" | "pairings" | "general";
+  title: string;
+  body: string;
+  author_name: string;
+  reply_count: number;
+  is_pinned: boolean;
+  created_at: string;
+}
+
+export interface CommunityReply {
+  id: string;
+  thread_id: string;
+  body: string;
+  author_name: string;
+  created_at: string;
+}
+
+export interface EventRegistration {
+  id: string;
+  event_id: string;
+  event_title: string;
+  event_date: string;
+  event_location?: string;
+  registered_at: string;
+  status: "confirmed" | "waitlisted" | "cancelled";
+}

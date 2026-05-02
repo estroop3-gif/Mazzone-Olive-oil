@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
+import { PortalSwitcher } from "@/components/ui/PortalSwitcher";
 import {
   LayoutDashboard,
   ClipboardList,
@@ -12,6 +13,7 @@ import {
   Map,
   Wine,
   Mail,
+  Play,
   FileEdit,
   BarChart3,
   LogOut,
@@ -27,6 +29,7 @@ const NAV_ITEMS = [
   { label: "Tours", href: "/admin/tours", icon: Map },
   { label: "Il Club", href: "/admin/club", icon: Wine },
   { label: "Email", href: "/admin/email", icon: Mail },
+  { label: "Media", href: "/admin/media", icon: Play },
   { label: "Content", href: "/admin/content", icon: FileEdit },
   { label: "Analytics", href: "/admin/analytics", icon: BarChart3 },
 ];
@@ -96,18 +99,21 @@ export function AdminSidebar({ open, onClose }: AdminSidebarProps) {
           })}
         </nav>
 
-        {/* User section */}
-        <div className="px-4 py-4 border-t border-olive-800">
-          <p className="text-olive-300 text-xs truncate mb-2">
-            {profile?.email ?? "admin@mazzone.com"}
-          </p>
-          <button
-            onClick={signOut}
-            className="flex items-center gap-2 text-olive-400 hover:text-white text-sm transition-colors"
-          >
-            <LogOut size={14} />
-            Sign Out
-          </button>
+        {/* Portal Switcher + User section */}
+        <div className="px-3 py-3 border-t border-olive-800 space-y-3">
+          <PortalSwitcher variant="dark" onNavigate={onClose} />
+          <div className="px-1">
+            <p className="text-olive-300 text-xs truncate mb-2">
+              {profile?.email ?? "admin@mazzone.com"}
+            </p>
+            <button
+              onClick={signOut}
+              className="flex items-center gap-2 text-olive-400 hover:text-white text-sm transition-colors"
+            >
+              <LogOut size={14} />
+              Sign Out
+            </button>
+          </div>
         </div>
       </aside>
     </>

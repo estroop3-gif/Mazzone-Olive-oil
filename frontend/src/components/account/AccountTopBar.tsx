@@ -2,34 +2,31 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, ExternalLink } from "lucide-react";
+import { Menu, ArrowLeft } from "lucide-react";
 
-interface AdminTopBarProps {
+interface AccountTopBarProps {
   onMenuClick: () => void;
 }
 
 const BREADCRUMB_MAP: Record<string, string> = {
-  "/admin": "Dashboard",
-  "/admin/orders": "Orders",
-  "/admin/products": "Products & Shop",
-  "/admin/journal": "Journal",
-  "/admin/events": "Events",
-  "/admin/tours": "Tours",
-  "/admin/club": "Il Club",
-  "/admin/email": "Email",
-  "/admin/media": "Media",
-  "/admin/content": "Content",
-  "/admin/analytics": "Analytics",
+  "/account": "Dashboard",
+  "/account/orders": "Orders",
+  "/account/subscriptions": "Subscriptions",
+  "/account/events": "Events & Tours",
+  "/account/community": "Community",
+  "/account/shop": "Shop",
+  "/account/media": "Media",
+  "/account/settings": "Settings",
 };
 
-export function AdminTopBar({ onMenuClick }: AdminTopBarProps) {
+export function AccountTopBar({ onMenuClick }: AccountTopBarProps) {
   const pathname = usePathname();
 
   const getBreadcrumb = () => {
     for (const [path, label] of Object.entries(BREADCRUMB_MAP)) {
       if (pathname === path || pathname.startsWith(path + "/")) return label;
     }
-    return "Admin";
+    return "Account";
   };
 
   return (
@@ -44,11 +41,11 @@ export function AdminTopBar({ onMenuClick }: AdminTopBarProps) {
         <span className="text-sm text-stone">{getBreadcrumb()}</span>
       </div>
       <Link
-        href="/"
+        href="/shop"
         className="flex items-center gap-1.5 text-sm text-olive-600 hover:text-olive-900 transition-colors"
       >
-        <ExternalLink size={14} />
-        Back to Site
+        <ArrowLeft size={14} />
+        Back to Shop
       </Link>
     </div>
   );
