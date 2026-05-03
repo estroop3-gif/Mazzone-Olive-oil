@@ -17,6 +17,10 @@ const STATUS_STYLES: Record<string, string> = {
   cancelled: "bg-red-50 text-red-600 border-red-200",
   refunded: "bg-red-50 text-red-600 border-red-200",
   expired: "bg-red-50 text-red-600 border-red-200",
+  submitted: "bg-blue-50 text-blue-700 border-blue-200",
+  approved: "bg-green-50 text-green-700 border-green-200",
+  rejected: "bg-red-50 text-red-600 border-red-200",
+  suspended: "bg-red-50 text-red-600 border-red-200",
 };
 
 interface StatusBadgeProps {

@@ -180,3 +180,145 @@ export interface EventRegistration {
   registered_at: string;
   status: "confirmed" | "waitlisted" | "cancelled";
 }
+
+/* ── Wholesale Portal ──────────────────────────────────── */
+
+export interface WholesaleAccount {
+  id: string;
+  business_name: string;
+  contact_name: string;
+  contact_email: string;
+  contact_phone: string;
+  tax_id: string;
+  payment_terms: "net_15" | "net_30" | "net_60" | "prepaid";
+  account_status: "active" | "suspended" | "pending";
+  rep_name: string;
+  rep_email: string;
+  rep_phone: string;
+  shipping_address: Address;
+  billing_address: Address;
+  created_at: string;
+}
+
+export interface WholesalePriceTier {
+  min_qty: number;
+  max_qty: number | null;
+  label: string;
+  discount_pct: number;
+}
+
+export interface WholesaleOrderItem {
+  id: string;
+  product_id: string;
+  product_name: string;
+  quantity: number;
+  case_qty: number;
+  unit_price_cents: number;
+  line_total_cents: number;
+}
+
+export interface WholesaleOrder {
+  id: string;
+  account_id: string;
+  po_number: string;
+  status: "draft" | "submitted" | "confirmed" | "processing" | "shipped" | "delivered" | "cancelled";
+  items: WholesaleOrderItem[];
+  subtotal_cents: number;
+  shipping_cents: number;
+  tax_cents: number;
+  total_cents: number;
+  tracking_number?: string | null;
+  tracking_events: TrackingEvent[];
+  delivery_notes?: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface WholesaleFAQ {
+  question: string;
+  answer: string;
+}
+
+/* ── Employee Portal ───────────────────────────────────── */
+
+export type EmployeeDepartment = "production" | "sales" | "operations" | "tasting_room" | "admin";
+
+export interface Employee {
+  id: string;
+  full_name: string;
+  role: string;
+  department: EmployeeDepartment;
+  email: string;
+  phone: string;
+  hire_date: string;
+  is_active: boolean;
+}
+
+export interface TimeEntry {
+  id: string;
+  date: string;
+  clock_in: string;
+  clock_out: string | null;
+  break_minutes: number;
+  total_hours: number;
+}
+
+export interface Timecard {
+  id: string;
+  employee_id: string;
+  week_start: string;
+  week_end: string;
+  status: "draft" | "submitted" | "approved" | "rejected";
+  entries: TimeEntry[];
+  total_hours: number;
+  submitted_at?: string | null;
+}
+
+export interface PTOBalance {
+  type: "vacation" | "sick" | "personal";
+  accrued_hours: number;
+  used_hours: number;
+  available_hours: number;
+}
+
+export interface PTORequest {
+  id: string;
+  type: "vacation" | "sick" | "personal";
+  start_date: string;
+  end_date: string;
+  hours: number;
+  status: "pending" | "approved" | "rejected";
+  notes?: string | null;
+  created_at: string;
+}
+
+export interface Shift {
+  id: string;
+  date: string;
+  start_time: string;
+  end_time: string;
+  department: EmployeeDepartment;
+  location: string;
+}
+
+export interface PayStub {
+  id: string;
+  period_start: string;
+  period_end: string;
+  pay_date: string;
+  gross_cents: number;
+  deductions_cents: number;
+  taxes_cents: number;
+  net_cents: number;
+  hours: number;
+  overtime_hours: number;
+}
+
+export interface Announcement {
+  id: string;
+  title: string;
+  body: string;
+  author: string;
+  priority: "normal" | "important" | "urgent";
+  created_at: string;
+}
